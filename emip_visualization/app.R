@@ -1,6 +1,6 @@
 ###' ###########################################################################'
 ###' 
-###' Project(project name): EM-IP
+###' Project(project name): EMIP_Visualization
 ###' 
 ###' Category(stage in the project): visualization
 ###' 
@@ -28,14 +28,12 @@ gc(); rm(list=ls())
 
 
 ### Set working directory and data directory
-work_dir <- c("D:/HYEM'S/GraduatedSchool/STUDY/EM-IP")
+work_dir <- c("D:/HYEM'S/GraduatedSchool/STUDY/EMIP_Visualization")
 data_dir <- file.path(work_dir, "dataset")
 
 ### Call libraries
-library(rsconnect)
-library(tidyverse); library(shiny); library(shinydashboard); library(quantmod);library(rsconnect)
-library(plyr); library(bupaR); library(edeaR); library(reshape); library(stringr); library(stringi)
-library(processmapR); library(petrinetR); library(DiagrammeR); library(pm4py)
+library(rsconnect); library(readr); library(tidyverse); library(shiny); library(shinydashboard); library(quantmod);library(plyr)
+library(bupaR); library(edeaR); library(reshape); library(stringr); library(stringi); library(processmapR); library(petrinetR); library(DiagrammeR); library(pm4py)
 
 
 
@@ -46,12 +44,13 @@ library(processmapR); library(petrinetR); library(DiagrammeR); library(pm4py)
 ###' 
 
 ### Set file path
-logdata_cnt <- read.csv("https://raw.githubusercontent.com/hyemin20/EM-IP/main/datasets/final_cnt.csv?token=GHSAT0AAAAAABQLQJAFUKLYPUAXEKZKO7TYYQZW4RA", 
-                        header = TRUE, stringsAsFactors = FALSE) %>% tibble()
-logdata_full_credit <- read.csv("https://raw.githubusercontent.com/hyemin20/EM-IP/main/datasets/full_credit.csv?token=GHSAT0AAAAAABQLQJAEDHSDCCLU7EHU7JE2YQZWXSQ", 
-                                header = TRUE, stringsAsFactors = FALSE) %>% tibble()
-logdata_no_credit <- read.csv("https://raw.githubusercontent.com/hyemin20/EM-IP/main/datasets/no_credit.csv?token=GHSAT0AAAAAABQLQJAFCDLPK7FC7LZZC6LMYQZWYEQ", 
-                              header = TRUE, stringsAsFactors = FALSE) %>% tibble()
+logdata_cnt <- read.csv("https://raw.githubusercontent.com/hyemin20/EMIP_Visualization/main/datasets/final_cnt.csv", 
+                        sep = '\t', header = TRUE, stringsAsFactors = FALSE) %>% tibble()
+logdata_full_credit <- read.csv("https://raw.githubusercontent.com/hyemin20/EMIP_Visualization/main/datasets/full_credit.csv",
+                                header = FALSE) %>% tibble()
+logdata_no_credit <- read.csv("https://raw.githubusercontent.com/hyemin20/EMIP_Visualization/main/datasets/no_credit.csv",
+                              header = FALSE) %>% tibble()
+
 
 
 ###' ###########################################################################'
