@@ -44,12 +44,12 @@ library(bupaR); library(edeaR); library(reshape); library(stringr); library(stri
 ###' 
 
 ### Set file path
-logdata_cnt <- read.csv("https://raw.githubusercontent.com/hyemin20/EMIP_Visualization/main/datasets/final_cnt.csv", 
-                        sep = '\t', header = TRUE, stringsAsFactors = FALSE) %>% tibble()
-logdata_full_credit <- read.csv("https://raw.githubusercontent.com/hyemin20/EMIP_Visualization/main/datasets/full_credit.csv",
-                                header = FALSE) %>% tibble()
-logdata_no_credit <- read.csv("https://raw.githubusercontent.com/hyemin20/EMIP_Visualization/main/datasets/no_credit.csv",
-                              header = FALSE) %>% tibble()
+logdata_cnt <- read.csv("https://gitcdn.link/cdn/hyemin20/EMIP_Visualization/main/datasets/final_cnt.csv",
+                        sep = ",", header = TRUE, stringsAsFactors = FALSE) %>% tibble()
+logdata_full_credit <- read.csv("https://gitcdn.link/cdn/hyemin20/EMIP_Visualization/main/datasets/full_credit.csv",
+                                header = TRUE, stringsAsFactors = FALSE) %>% tibble()
+logdata_no_credit <- read.csv("https://gitcdn.link/cdn/hyemin20/EMIP_Visualization/main/datasets/no_credit.csv",
+                              header = TRUE, stringsAsFactors = FALSE) %>% tibble()
 
 
 
@@ -60,6 +60,11 @@ logdata_no_credit <- read.csv("https://raw.githubusercontent.com/hyemin20/EMIP_V
 ###' 
 
 ### Check datasets
+str(logdata_cnt)
+
+logdata_cnta <- logdata_cnt[!(logdata_cnt$credit == "credit" ), ]
+as.numeric(logdata_cnt$credit)
+table(logdata_cnt$credit)
 table(logdata_full_credit$credit)
 table(logdata_no_credit$credit)
 
