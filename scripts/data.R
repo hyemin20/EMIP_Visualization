@@ -25,7 +25,7 @@ gc(); rm(list=ls())
 
 
 ### Set working directory and data directory
-work_dir <- c("D:/HYEM'S/GraduatedSchool/PROJECTS/MyProjects/EM-IP")
+work_dir <- c("D:/HYEM'S/GraduatedSchool/PROJECTS/MyProjects/EMIP_Visualization")
 data_dir <- file.path(work_dir, "datasets")
 setwd(work_dir)
 
@@ -43,8 +43,8 @@ library(rsconnect); library(bupaR); library(edeaR); library(processmapR); librar
 ###' 
 
 ### Set file path
-original <- read.csv("D:/HYEM'S/GraduatedSchool/PROJECTS/MyProjects/EM-IP/datasets/original.csv", header = TRUE, stringsAsFactors = FALSE) %>% tibble()
-scoring <- read.csv("D:/HYEM'S/GraduatedSchool/PROJECTS/MyProjects/EM-IP/datasets/scoring.csv", header = TRUE, stringsAsFactors = FALSE) %>% tibble()
+original <- read.csv("D:/HYEM'S/GraduatedSchool/PROJECTS/MyProjects/EMIP_Visualization/datasets/original.csv", header = TRUE, stringsAsFactors = FALSE) %>% tibble()
+scoring <- read.csv("D:/HYEM'S/GraduatedSchool/PROJECTS/MyProjects/EMIP_Visualization/datasets/scoring.csv", header = TRUE, stringsAsFactors = FALSE) %>% tibble()
 
 
 

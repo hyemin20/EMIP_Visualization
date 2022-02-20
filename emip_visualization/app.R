@@ -99,9 +99,8 @@ ui <- fluidPage(
   
   sidebarLayout(
     sidebarPanel(
-      helpText("Select a Country"),
       
-      selectInput("Country", "Country", 
+      selectInput("Country", "Select a Country", 
                   choices = distinct(logdata_cnt, cnt), 
                   selected = 1),
       width = 3,
@@ -119,8 +118,8 @@ ui <- fluidPage(
     mainPanel(
       fluidRow(splitLayout(cellWidths = c("50%","50%"),
                            grVizOutput("plot1"), grVizOutput("plot2"))),
-      HTML('&nbsp;'),
-      tags$div(tags$dbr),
+#      HTML('&nbsp;'),
+#      tags$div(tags$dbr),
       tags$hr(),
       tags$div(tags$dbr),
       stri_dup(intToUtf8(160), 6),
