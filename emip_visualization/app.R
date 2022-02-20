@@ -27,10 +27,6 @@
 gc(); rm(list=ls())
 
 
-### Set working directory and data directory
-work_dir <- c("D:/HYEM'S/GraduatedSchool/STUDY/EMIP_Visualization")
-data_dir <- file.path(work_dir, "dataset")
-
 ### Call libraries
 library(rsconnect); library(readr); library(tidyverse); library(shiny); library(shinydashboard); library(quantmod);library(plyr)
 library(bupaR); library(edeaR); library(reshape); library(stringr); library(stringi); library(processmapR); library(petrinetR); library(DiagrammeR); library(pm4py)
@@ -44,11 +40,11 @@ library(bupaR); library(edeaR); library(reshape); library(stringr); library(stri
 ###' 
 
 ### Set file path
-logdata_cnt <- read.csv("https://gitcdn.link/cdn/hyemin20/EMIP_Visualization/main/datasets/final_cnt.csv",
+logdata_cnt <- read.csv("https://raw.githubusercontent.com/hyemin20/EMIP_Visualization/main/datasets/logdata_cntA.csv",
                         header = TRUE, stringsAsFactors = FALSE) %>% tibble()
-logdata_full_credit <- read.csv("https://gitcdn.link/cdn/hyemin20/EMIP_Visualization/main/datasets/full_credit.csv",
+logdata_full_credit <- read.csv("https://raw.githubusercontent.com/hyemin20/EMIP_Visualization/main/datasets/full_creditA.csv",
                                 header = TRUE, stringsAsFactors = FALSE) %>% tibble()
-logdata_no_credit <- read.csv("https://gitcdn.link/cdn/hyemin20/EMIP_Visualization/main/datasets/no_credit.csv",
+logdata_no_credit <- read.csv("https://raw.githubusercontent.com/hyemin20/EMIP_Visualization/main/datasets/no_creditA.csv",
                               header = TRUE, stringsAsFactors = FALSE) %>% tibble()
 
 
@@ -62,6 +58,8 @@ logdata_no_credit <- read.csv("https://gitcdn.link/cdn/hyemin20/EMIP_Visualizati
 ### Check datasets
 str(logdata_cnt)
 str(logdata_full_credit)
+nrow(distinct(logdata_full_credit, ID))
+nrow(distinct(logdata_no_credit, ID))
 
 
 ### event_log
