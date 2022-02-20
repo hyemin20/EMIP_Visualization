@@ -1,0 +1,13 @@
+name: emip_visualization
+title: emip_visualization
+username:
+account: hyems
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 5693185
+bundleId: 5598436
+url: https://hyems.shinyapps.io/emip_visualization/
+when: 1645334788.42071
+lastSyncTime: 1645334788.42071
+asMultiple: FALSE
+asStatic: FALSE
