@@ -104,7 +104,15 @@ ui <- fluidPage(
       selectInput("Country", "Country", 
                   choices = distinct(logdata_cnt, cnt), 
                   selected = 1),
-      width = 3
+      width = 3,
+      
+      # adding the new div tag to the sidebar            
+      tags$div(class="header", checked=NA,
+               tags$p("Ready to take the Shiny tutorial? If so"),
+               tags$a(href="shiny.rstudio.com/tutorial", "Click Here!")
+      
+               )
+      
     ),
     
     
@@ -112,8 +120,9 @@ ui <- fluidPage(
       fluidRow(splitLayout(cellWidths = c("50%","50%"),
                            grVizOutput("plot1"), grVizOutput("plot2"))),
       HTML('&nbsp;'),
-      span(),
-      div(),
+      tags$div(tags$dbr),
+      tags$hr(),
+      tags$div(tags$dbr),
       stri_dup(intToUtf8(160), 6),
       
       fluidRow(splitLayout(cellWidths = c("50%","50%"),
