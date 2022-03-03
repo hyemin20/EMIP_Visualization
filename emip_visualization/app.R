@@ -95,7 +95,7 @@ event_log_no <- eventlog(logdata_no_credit,
 
 ### Define UI for application that draws a histogram
 ui <- fluidPage(
-  titlePanel("PISA 2012 Process Data"),
+  titlePanel("PISA 2012 CPS Process Data"),
   
   sidebarLayout(
     sidebarPanel(
@@ -105,13 +105,6 @@ ui <- fluidPage(
                   selected = 1),
       width = 3,
       
-      # adding the new div tag to the sidebar            
-      tags$div(class="header", checked=NA,
-               tags$p("Ready to take the Shiny tutorial? If so"),
-               tags$a(href="shiny.rstudio.com/tutorial", "Click Here!")
-      
-               )
-      
     ),
     
     
@@ -119,9 +112,9 @@ ui <- fluidPage(
       fluidRow(splitLayout(cellWidths = c("50%","50%"),
                            grVizOutput("plot1"), grVizOutput("plot2"))),
 #      HTML('&nbsp;'),
-#      tags$div(tags$dbr),
-      tags$hr(),
       tags$div(tags$dbr),
+#      tags$div(tags$dbr),
+#      tags$hr(),
       stri_dup(intToUtf8(160), 6),
       
       fluidRow(splitLayout(cellWidths = c("50%","50%"),
